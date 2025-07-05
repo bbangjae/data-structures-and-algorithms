@@ -4,7 +4,7 @@ package array;
 public class MyArrayListTest {
     public static void main(String[] args) {
 
-        MyArrayList<Integer> myArrayList = new MyArrayList<>();
+        MyArrayList<Integer> myArrayList = new MyArrayList<>(2);
 
         myArrayList.add(0);
         System.out.println("0을 추가한 후: " + myArrayList);

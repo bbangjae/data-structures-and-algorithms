@@ -9,8 +9,12 @@ public class MyArrayList<E> {
     private int size;
 
     public MyArrayList() {
-        this.elements = new Object[DEFAULT_CAPACITY];
+        this(DEFAULT_CAPACITY);
+    }
+
+    public MyArrayList(int initialCapacity) {
         this.size = 0;
+        this.elements = new Object[initialCapacity];
     }
 
     public int size() {

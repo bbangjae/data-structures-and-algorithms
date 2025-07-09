@@ -1,4 +1,4 @@
-package array;
+package link;
 
 public class MySingleLinkedListTest {
     public static void main(String[] args) {

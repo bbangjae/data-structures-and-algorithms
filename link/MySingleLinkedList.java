@@ -1,5 +1,4 @@
-package array;
-
+package link;
 
 public class MySingleLinkedList<T> {
 

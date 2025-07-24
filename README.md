@@ -25,12 +25,14 @@
 
 ## 자료구조 목록
 
-| 자료구조  | README 링크                  | 예시 코드 링크                                          |
-|:-----:|:---------------------------|:--------------------------------------------------|
-| array | [배열 문서](./array/README.md) | [MyArrayList 구현](./array/MyArrayList.java)        |
-| link  | [배열 문서](./link/README.md)  | [MyLinkedList 구현](./link/MyDoubleLinkedList.java) |
-| stack | [배열 문서](./stack/README.md) | [MyStack 구현](./stack/MyStack.java)                |
-| queue | [배열 문서](./queue/README.md) | [MyQueue 구현](./queue/MyQueue.java)                |
+| 자료구조  | README 링크                   | 예시 코드 링크                                          |
+|:-----:|:----------------------------|:--------------------------------------------------|
+| array | [배열 문서](./array/README.md)  | [MyArrayList 구현](./array/MyArrayList.java)        |
+| link  | [배열 문서](./link/README.md)   | [MyLinkedList 구현](./link/MyDoubleLinkedList.java) |
+| stack | [배열 문서](./stack/README.md)  | [MyStack 구현](./stack/MyStack.java)                |
+| queue | [배열 문서](./queue/README.md)  | [MyQueue 구현](./queue/MyQueue.java)                |
+| hash        | (작성 예정)                          | [MyHashTable 구현](./hash/MyHashTable.java)<br>[MyHashMap 구현](./hash/MyHashMap.java) |
+| tree        | (작성 예정)                          | [MyBinarySearchTree 구현](./tree/MyBinarySearchTree.java) |
 
 
 

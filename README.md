@@ -25,14 +25,14 @@
 
 ## 자료구조 목록
 
-| 자료구조  | README 링크                   | 예시 코드 링크                                          |
-|:-----:|:----------------------------|:--------------------------------------------------|
-| array | [배열 문서](./array/README.md)  | [MyArrayList 구현](./array/MyArrayList.java)        |
-| link  | [배열 문서](./link/README.md)   | [MyLinkedList 구현](./link/MyDoubleLinkedList.java) |
-| stack | [배열 문서](./stack/README.md)  | [MyStack 구현](./stack/MyStack.java)                |
-| queue | [배열 문서](./queue/README.md)  | [MyQueue 구현](./queue/MyQueue.java)                |
-| hash        | (작성 예정)                          | [MyHashTable 구현](./hash/MyHashTable.java)<br>[MyHashMap 구현](./hash/MyHashMap.java) |
-| tree        | (작성 예정)                          | [MyBinarySearchTree 구현](./tree/MyBinarySearchTree.java) |
+| 자료구조  | README 링크                  | 예시 코드 링크                                          |
+|:-----:|:---------------------------|:--------------------------------------------------|
+| array | [배열 문서](./array/README.md) | [MyArrayList 구현](./array/MyArrayList.java)        |
+| link  | [링크 문서](./link/README.md)  | [MyLinkedList 구현](./link/MyDoubleLinkedList.java) |
+| stack | [스택 문서](./stack/README.md) | [MyStack 구현](./stack/MyStack.java)                |
+| queue | [큐 문서](./queue/README.md)  | [MyQueue 구현](./queue/MyQueue.java)                |
+| hash        | [해쉬 문서](./hash/README.md)  | [MyHashTable 구현](./hash/MyHashTable.java)<br>[MyHashMap 구현](./hash/MyHashMap.java) |
+| tree        | (작성 예정)                    | [MyBinarySearchTree 구현](./tree/MyBinarySearchTree.java) |
 
 
 
@@ -260,3 +260,56 @@ Queue<Integer> queue = new LinkedList<>();
 | 삽입(Rear 위치)    | O(1)   |  마지막에 삽입        |
 | 삭제 (Front 위치)  | O(1)   |  첫 요소 제거    |
 | 값 확인(Front 위치) | O(1)   | 가장 앞 요소 확인   |
+
+---
+
+## 해싱 (Hashing)
+
+- 데이터를 **빠르게 저장하고 조회** 할 수 있도록 하는 기법
+- **Key에 특정 연산(해시 함수)** 을 적용하여 **테이블의 저장 위치**를 계산
+
+## Hash Function
+
+- 임의의 데이터를 특정 값으로 매핑시키는 함수
+- Java에서는 주로 객체의 hashCode() 메서드를 해시 함수로 사용
+- 해시 함수의 시간 복잡도는 일반적으로 **O(1)**
+
+## 해시 충돌
+
+- 서로 다른 키가 **같은 해시값을 반환하는 경우**
+- 해시 충돌이 발생하면, **같은 버킷(bucket)에 여러 데이터가 저장**
+- 좋은 해시 함수는 충돌 가능성을 **최대한 낮게 설계**
+
+## HashTable / HashMap
+
+### 📌 정의
+해시 기반 자료구조는 **Key-Value 쌍**으로 데이터를 저장하는 구조  
+**해시 함수(Hash Function)** 를 통해 키(key)를 해시값으로 변환하여 데이터를 저장
+
+```java
+Map<String, Integer> map = new HashMap<>();
+```
+
+### ⚙️ 특징
+- **Key-Value 구조**로 데이터를 저장함
+- **중복된 키(key)는 허용되지 않음**
+- **순서에 상관없이** 데이터를 **저장/조회**할 수 있음
+
+
+### ✅ 장점
+- 해시 충돌 없는 경우 **검색, 삽입, 삭제**가 **빠름** (평균 O(1))
+- Key를 통해 직접 접근 → **빠르고 효율적인 조회**
+- 데이터 양이 많아도 **성능 유지에 강함** (충돌이 적을 경우)
+
+### ❌ 단점
+- 해시 충돌 시 **성능 저하** (최악 O(n))
+- 순서가 보장되지 않음 (단, LinkedHashMap 사용 시 순서 유지)
+
+### ⏱️ 시간 복잡도
+
+| 연산   | 평균 시간 복잡도 | 최악 시간 복잡도 | 설명                              |
+|--------|-----------------|-----------------|---------------------------------|
+| 접근   | -               | -               | 직접 인덱스 접근 불가            |
+| 탐색   | O(1)            | O(n)            | 해시 충돌 시 버킷이 리스트로 작동 |
+| 삽입   | O(1)            | O(n)            | 해시 충돌이 없는 경우 빠름       |
+| 삭제   | O(1)            | O(n)            | 해시 충돌이 없는 경우 빠름            |
